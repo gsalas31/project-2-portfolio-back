@@ -1,15 +1,14 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const bookSchema = new Schema(
+const quoteSchema = new Schema(
     {
         name: {
             type: Schema.Types.ObjectId,
             ref: 'writers'
           },
-        type:{ type: String, required: true },
-        title: [String] 
+        type:{ type: URL, required: true },   
     }
 )
 
-module.exports = mongoose.model('Book', bookSchema)
+module.exports = mongoose.model('Quote', quoteSchema)

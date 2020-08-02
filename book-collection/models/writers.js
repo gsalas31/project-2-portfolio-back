@@ -7,7 +7,7 @@ const writerSchema = new Schema(
         portrait: { type: URL, required: true },
         bio: [
             {
-                year: Number,
+                year: String,
                 description: {type:String, required:true}
             }
              ]
