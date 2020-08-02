@@ -7,7 +7,7 @@ const quoteSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'writers'
           },
-        type:{ type: URL, required: true },   
+        quoteURL: { type: String, required:true } 
     }
 )
 
