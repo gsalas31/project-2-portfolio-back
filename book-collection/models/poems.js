@@ -3,13 +3,14 @@ const Schema = mongoose.Schema
 
 const poemSchema = new Schema(
     {
-        title: [String],
-        name: {
-            type: Schema.Types.ObjectId,
-            ref: 'writers'
-          },
-        "rease-year": String,
-        type:{ type: String, required: true },
+        name: { type: String, require:true},
+        book:[
+            {
+                title:{ type: String, required: true },
+                "release-year": { type: String, required: true },
+                type:{ type: String, required: true } 
+            }
+            ]
     }
 )
 

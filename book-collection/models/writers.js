@@ -8,7 +8,14 @@ const writerSchema = new Schema(
         bio:{
                 dob: {type:String},
                 description: {type:String, required:true}
+            }, 
+        book: [
+            {
+                type: Schema.Types.ObjectId,
+                 ref:'poems',
+                 ref:'books'
             }
+                 ]
     }
 )
 

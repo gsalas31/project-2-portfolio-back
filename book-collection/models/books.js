@@ -3,15 +3,16 @@ const Schema = mongoose.Schema
 
 const bookSchema = new Schema(
     {
-        title: [String],
-        name: {
-            type: Schema.Types.ObjectId,
-            ref: 'writers'
-          },
-        "rease-year": String,
-        type:{ type: String, required: true },
-        pages: Number
+        name:{ type: String, required: true },
+        book:[
+            {title: [String],
+            "release-year": String,
+            type:{ type: String, required: true },
+            pages: Number
+            }
+            ]
     }
 )
+
 
 module.exports = mongoose.model('Book', bookSchema)
