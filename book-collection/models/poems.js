@@ -3,15 +3,13 @@ const Schema = mongoose.Schema
 
 const poemSchema = new Schema(
     {
-        name: { type: String, require:true},
-        book:[
-            {
-                title:{ type: String, required: true },
-                "release-year": { type: String, required: true },
-                type:{ type: String, required: true } 
-            }
-            ]
-    }
+        writer:{
+            type: Schema.Types.ObjectId,
+             ref:'Writer'
+        },
+        title: {type:String},
+        "release-year": String
+     }
 )
 
 module.exports = mongoose.model('Poem', poemSchema)

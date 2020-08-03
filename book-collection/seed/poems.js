@@ -57,23 +57,23 @@ const poemSeed = [
 
 const addPoem = async () => {
   
-    await Promise.all(poemSeed.map(async bookToAdd => {
+    await Promise.all(poemSeed.map(async authorToAdd => {
   
-          // find artist document with matching name
-          let writer = await Writer.findOne({name: bookToAdd.writer})
-  
-          // update object with artist ID
-          bookToAdd.writer = writer._id
-  
-          // create record
-          const book = await Poem.create(bookToAdd)
-          console.log(book)
-  
-          await writer.book.push(book._id)
-          await writer.save()
-          console.log(writer)
+        let writer = await Writer.findOne({name: authorToAdd.name})
+
+        authorToAdd.book.map(async poemToAdd=>{
+            poemToAdd.writer = writer._id
+            const poem = await Poem.create(poemToAdd)
+            console.log(poem)
+            await writer.poems.push(poem._id)
+
+           } )
+        
+        await writer.save()
+        console.log(writer)
       }))
-  db.close()
+  
+    db.close()
   
   }
   

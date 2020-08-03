@@ -9,11 +9,16 @@ const writerSchema = new Schema(
                 dob: {type:String},
                 description: {type:String, required:true}
             }, 
-        book: [
+        books: [
             {
                 type: Schema.Types.ObjectId,
-                 ref:'poems',
-                 ref:'books'
+                 ref:'Book'
+            }
+                 ],
+        poems: [
+            {
+                type: Schema.Types.ObjectId,
+                 ref:'Poem'
             }
                  ]
     }

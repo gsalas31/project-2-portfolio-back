@@ -3,15 +3,15 @@ const Schema = mongoose.Schema
 
 const bookSchema = new Schema(
     {
-        name:{ type: String, required: true },
-        book:[
-            {title: [String],
-            "release-year": String,
-            type:{ type: String, required: true },
-            pages: Number
-            }
-            ]
-    }
+        writer:{
+            type: Schema.Types.ObjectId,
+             ref:'Writer'
+        },
+        title: {type:String},
+        "release-year": String,
+        pages: Number
+     }
+            
 )
 
 
