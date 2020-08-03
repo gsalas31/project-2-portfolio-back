@@ -4,13 +4,11 @@ const Schema = mongoose.Schema
 const writerSchema = new Schema(
     {
         name: { type: String, required: true },
-        portraitURL: { type: String, required: true },
-        bio: [
-            {
-                year: String,
+        portrait: { type: String, required: true },
+        bio:{
+                dob: {type:String},
                 description: {type:String, required:true}
             }
-             ]
     }
 )
 
