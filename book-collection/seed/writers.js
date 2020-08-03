@@ -27,5 +27,27 @@ const writerSeed=[
         description:"Chilean poet, diplomat, and politician who was awarded the Nobel Prize for Literature in 1971. He was perhaps the most important Latin American poet of the 20th century. Neruda first published his poems in the local newspapers and later in magazines published in the Chilean capital, Santiago. In 1921 he moved to Santiago to continue his studies and become a French teacher. There he experienced loneliness and hunger and took up a bohemian lifestyle. His first book of poems, Crepusculario, was published in 1923. The poems, subtle and elegant, were in the tradition of Symbolist poetry, or rather its Hispanic version, Modernismo. His second book, Veinte poemas de amor y una canción desesperada (1924; Twenty Love Poems and a Song of Despair), was inspired by an unhappy love affair. It became an instant success and is still one of Neruda’s most popular books. At age 20, with two books published, Neruda had already become one of the best-known Chilean poets. He abandoned his French studies and began to devote himself entirely to poetry.  " 
         }
     },
+    {name: "Gabriela Mistral", portrait: "https://res.cloudinary.com/g31ssa/image/upload/v1596405484/Picture5_fzlttu.png",
+    bio:{
+        dob: "1889-1957" ,    
+        description:"Chilean poet, who in 1945 became the first Latin American to win the Nobel Prize for Literature.Of Spanish, Basque, and Indian descent, Mistral grew up in a village of northern Chile and became a schoolteacher at age 15, advancing later to the rank of college professor. Throughout her life she combined writing with a career as an educator, cultural minister, and diplomat; her diplomatic assignments included posts in Madrid, Lisbon, Genoa, and Nice. Her reputation as a poet was established in 1914 when she won a Chilean prize for three “Sonetos de la muerte” " 
+        }
+    },
+    {name: "Isabel Allende", portrait: "https://res.cloudinary.com/g31ssa/image/upload/v1596405483/Picture6_lngccc.png",
+    bio:{
+        dob: "1942-////" ,    
+        description:"Chilean American writer in the magic realist tradition who is considered one of the first successful woman novelists from Latin America. Allende was born in Peru to Chilean parents. She worked as a journalist in Chile until she was forced to flee to Venezuela after the assassination (1973) of her uncle, Chilean Pres. Salvador Allende. In 1981 she began writing a letter to her terminally ill grandfather that evolved into her first novel, La casa de los espíritus (1982; The House of the Spirits). It was followed by the novels De amor y de sombra (1984; Of Love and Shadows), Eva Luna (1987), and El plan infinito (1991; The Infinite Plan) and the collection of stories Cuentos de Eva Luna (1990; The Stories of Eva Luna). All are examples of magic realism, in which realistic fiction is overlaid with elements of fantasy and myth. Her concern in many of these works is the portrayal of South American politics, and her first four works reflect her own experiences and examine the role of women in Latin America. " 
+        }
+    }
 
 ]
+
+Writer.insertMany(writerSeed,
+    (error, response) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log(response);
+        }
+        //db.close()
+    })
