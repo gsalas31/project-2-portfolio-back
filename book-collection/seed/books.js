@@ -1,6 +1,6 @@
 const db = require('../db')
-const Book = require('../models/books.js')
-const Writer = require('../models/writers.js')
+const Book = require('../models/books')
+const Writer = require('../models/writers')
 
 const bookSeed =[
     {

@@ -1,6 +1,6 @@
 const db = require('../db')
-const Poem = require('../models/poems.js')
-const Writer = require('../models/writers.js')
+const Poem = require('../models/poems')
+const Writer = require('../models/writers')
 
 const poemSeed = [
     {
@@ -73,8 +73,7 @@ const addPoem = async () => {
           await writer.save()
           console.log(writer)
       }))
-  
-    db.close()
+  db.close()
   
   }
   

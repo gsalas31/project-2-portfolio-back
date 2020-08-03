@@ -49,5 +49,5 @@ Writer.insertMany(writerSeed,
         } else {
             console.log(response);
         }
-        //db.close()
+        db.close()
     })
