@@ -15,7 +15,7 @@ const index = async (req, res)=>{
 
 const destroy = async(req, res)=>{
     try{
-        const deleteQuote=await Quote.findByIdAndDelete(req,params.id)
+        const deleteQuote = await Quote.findByIdAndDelete(req.params.id)
         res.status(200).json(deleteQuote)
     }
     catch(error){
