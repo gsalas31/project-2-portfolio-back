@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const cors = require("cors"); 
 const mongoose = require("mongoose"); 
 
-const BooksRouter= require("./routes/books.js")
+const BooksRouter= require("./routes/books")
 const PoemsRouter= require("./routes/poems")
 const QuotesRouter= require("./routes/quotes")
 const WritersRouter= require("./routes/writers")
@@ -50,7 +50,8 @@ const corsOptions = {
 
 
 // MIDDLEWARE
-NODE_ENV === "development" ? app.use(cors()) : app.use(cors(corsOptions)); //ternary operator
+//NODE_ENV === "development" ? app.use(cors()) : app.use(cors(corsOptions)); //ternary operator
+app.use(cors())
 
 // Enables websites in whitelist to make API calls to your server, enables all sites in development
 app.use(express.json()); 
