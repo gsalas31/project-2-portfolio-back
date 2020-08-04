@@ -5,8 +5,12 @@ const app = express();
 const morgan = require("morgan"); 
 const cors = require("cors"); 
 const mongoose = require("mongoose"); 
-//const PizzaRouter = require("./routes/Pizza.js")
-//const RatRouter = require("./routes/Rat.js")
+
+const BooksRouter= require("./routes/books.js")
+const PoemsRouter= require("./routes/poems")
+const QuotesRouter= require("./routes/quotes")
+const WritersRouter= require("./routes/writers")
+const NewRouter= require("./routes/new")
 
 //GlOBAL VARIABLES
 
@@ -55,7 +59,15 @@ app.use(express.static("public"));
 
 
 // ROUTES AND ROUTERS
-//
+
+app.use("/books", BooksRouter)
+app.use("/poems",PoemsRouter)
+app.use("/quotes",QuotesRouter)
+app.use("/writers",WritersRouter)
+app.use("/new",NewRouter)
+
+
+
 
 
 //ROOT ROUTE (FOR TESTING)
