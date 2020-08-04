@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT; 
 const NODE_ENV = process.env.NODE_ENV; 
-const mongoURI = process.env.mongoURI + "test1"; //URI for connecting to database specified in .env
+const mongoURI = process.env.mongoURI + "selene"; //URI for connecting to database specified in .env
 const db = mongoose.connection; 
 const mongoConfigObject = { useNewUrlParser: true, useUnifiedTopology: true }; //Config option to eliminate deprecation warnings
 
@@ -55,8 +55,7 @@ app.use(express.static("public"));
 
 
 // ROUTES AND ROUTERS
-//app.use('/pizza', PizzaRouter)
-//app.use('/rat', RatRouter)
+//
 
 
 //ROOT ROUTE (FOR TESTING)
