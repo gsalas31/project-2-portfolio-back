@@ -11,7 +11,7 @@ const userNewSchema = new Schema(
     {
         timestamps:true
     }
-
 )
+
 
 module.exports = mongoose.model('New', userNewSchema)
