@@ -56,18 +56,19 @@ const poemSeed = [
 ]
 
 const addPoem = async () => {
-  
+    
+    await Poem.deleteMany()
     await Promise.all(poemSeed.map(async authorToAdd => {
   
         let writer = await Writer.findOne({name: authorToAdd.name})
 
-        authorToAdd.book.map(async poemToAdd=>{
+       await Promise.all(authorToAdd.book.map(async poemToAdd=>{
             poemToAdd.writer = writer._id
             const poem = await Poem.create(poemToAdd)
             console.log(poem)
             await writer.poems.push(poem._id)
 
-           } )
+           } ))
         
         await writer.save()
         console.log(writer)

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 // use environment URI if available
 //here is where i need to add my DB  and name can be anything
-let MONGODB_URI = process.env.PROD_MONGODB || process.env.MONGODB_URI || 'mongodb://localhost:27017/selene'
+let MONGODB_URI = process.env.PROD_MONGODB || process.env.mongoURI || 'mongodb://localhost:27017/' + "selene"
 
 // connect to database
 mongoose

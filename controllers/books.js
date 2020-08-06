@@ -14,7 +14,20 @@ const index = async (req, res)=>{
     }
     }
 
+const getBook = async (req, res)=>{
+     try{
+         const book = await Book.findById(req.params.id).populate('writer')
+         res.status(200).json(book)
+     }
+     catch(error){
+        res.status(400).send(error)
+    }
+}
+
+
+
 module.exports={
-    index
+    index,
+    getBook
 
     }

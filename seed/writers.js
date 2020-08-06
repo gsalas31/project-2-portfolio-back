@@ -41,7 +41,7 @@ const writerSeed=[
     }
 
 ]
-
+Writer.find({}).remove()
 Writer.insertMany(writerSeed,
     (error, response) => {
         if (error) {
