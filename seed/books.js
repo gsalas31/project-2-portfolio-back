@@ -126,7 +126,7 @@ const bookSeed =[
 ]
 
 const addBook = async () => {
-    await Book.find({}).remove()
+    await Book.deleteMany()
     await Promise.all(bookSeed.map(async authorToAdd => {
   
         let writer = await Writer.findOne({name: authorToAdd.name})
