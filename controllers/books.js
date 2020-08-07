@@ -24,8 +24,6 @@ const getBook = async (req, res)=>{
     }
 }
 
-
-
 module.exports={
     index,
     getBook

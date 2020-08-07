@@ -41,13 +41,15 @@ const writerSeed=[
     }
 
 ]
-Writer.find({}).remove()
-Writer.insertMany(writerSeed,
-    (error, response) => {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(response);
-        }
-        db.close()
+Writer.deleteMany()
+.then(()=>{
+    Writer.insertMany(writerSeed,
+        (error, response) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(response);
+            }
+            db.close()
+        })
     })
