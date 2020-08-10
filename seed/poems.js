@@ -66,11 +66,15 @@ const addPoem = async () => {
             poemToAdd.writer = writer._id
             const poem = await Poem.create(poemToAdd)
             console.log(poem)
-            await writer.poems.push(poem._id)
+            await writer.poems.push(await poem._id)
 
            } ))
         
-        await writer.save()
+        await writer.save((err, result)=>{
+            if (err) return console.error(err)
+            console.log('save result')
+            console.log(result)
+        })
         console.log(writer)
       }))
   
