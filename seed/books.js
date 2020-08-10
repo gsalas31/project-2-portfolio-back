@@ -135,15 +135,16 @@ const addBook = async () => {
             bookToAdd.writer = writer._id
             const book = await Book.create(bookToAdd)
             console.log(book)
-            await writer.books.push(book._id)
+            await writer.books.push(await book._id)
 
            } ))
         
         await writer.save((err, result)=>{
             if (err) return console.error(err)
+            console.log('save result')
             console.log(result)
         })
-        console.log(writer)
+        //console.log(writer)
       }))
   
     //db.close()
