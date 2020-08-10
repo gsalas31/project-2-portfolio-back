@@ -78,7 +78,7 @@ const addPoem = async () => {
         console.log(writer)
       }))
   
-    db.close()
+    //db.close()
   
   }
   
