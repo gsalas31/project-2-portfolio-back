@@ -139,11 +139,14 @@ const addBook = async () => {
 
            } ))
         
-        await writer.save()
+        await writer.save((err, result)=>{
+            if (err) return console.error(err)
+            console.log(result)
+        })
         console.log(writer)
       }))
   
-    db.close()
+    //db.close()
   
   }
   
